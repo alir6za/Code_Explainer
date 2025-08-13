@@ -4,11 +4,17 @@
 
 خیلی وقت‌ها پیش میاد که می‌خوای کد رو بررسی کنی و بفهمی دقیقاً چی کار می‌کنه، اما حوصله‌ی کپی‌پیست کردنش توی ابزار هوش مصنوعی رو نداری. با این ریپو، فقط با هایلایت کردن کد و زدن یک کلید ترکیبی می‌تونی همون‌جا پنل توضیحات کد رو جلوی چشمت بیاری.
 
+</div>
+
 <div style="text-align: center;">
   <img src="./assets/img/sample.png" alt="panel" width="700"/>
 </div>
 
+<div style="direction: rtl; text-align: right;">
 این ابزار سبک برای لینوکس، متن کدی که انتخاب کرده‌اید را خوانده و با استفاده از LLM (مدل Gemini)، آن را به‌صورت خلاصه و به زبان فارسی توضیح می‌دهد. رابط کاربری آن با GTK3 طراحی شده و برای بستن پنجره کافی است کلید Space را فشار دهید.
+</div>
+
+<div style="direction: rtl; text-align: right;">
 
 ## قابلیت‌ها
 - **توضیح فارسی و خلاصه**: جمع‌بندی ۳–۴ خطی از هدف و نکات مهم کد  
@@ -20,6 +26,9 @@
 - **سیستم‌عامل**: لینوکس   
 - **Python**: نسخه 3.10 یا بالاتر  
 - **وابستگی‌های سیستمی**:
+  
+</div>
+
 <div style="text-align: left; direction: ltr;">
 
   - Debian/Ubuntu:  
@@ -37,6 +46,8 @@
     ```
 </div>
 
+<div style="direction: rtl; text-align: right;">
+
 ## نصب وابستگی‌های پایتونی
 در ریشه مخزن:  
 ```bash
@@ -45,6 +56,9 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+</div>
+
+<div style="direction: rtl; text-align: right;">
 
 ## نحوه گرفتن API از [Studio AI](https://aistudio.google.com/prompts/new_chat)
 
@@ -58,6 +72,9 @@ pip install -r requirements.txt
 
  کلید را در فایل `api/gemini_api.py` در متغیر `GEMINI_API_KEY` جایگزین کنید.
 
+</div>
+
+<div style="direction: rtl; text-align: right;">
 
 ## ساخت شورتکات اجرای ماژول در لینوکس
 
@@ -74,14 +91,15 @@ pip install -r requirements.txt
     Settings → Keyboard → View and Customize Shortcuts → Customize Shortcuts
     ```
 
-3.سپس یک شورتکات جدید بسازید و مقادیر زیر را وارد کنید: 
-- **Name:** نام دلخواه (مثلاً `Code Explainer`)  
-- **Command:** مسیر اجرای ماژول `main.py`، برای مثال:  
-  ```bash
-  python3 /full/path/to/main.py
-  ```
-- **Shortcut:** کلید ترکیبی دلخواه (مثلاً Ctrl+Q)
-
+3. سپس یک شورتکات جدید بسازید و مقادیر زیر را وارد کنید: 
+   - **Name:** نام دلخواه (مثلاً `Code Explainer`)  
+   - **Command:** مسیر اجرای ماژول `main.py`، برای مثال:  
+      ```bash
+      python3 /full/path/to/main.py
+      ```
+   - **Shortcut:** کلید ترکیبی دلخواه (مثلاً Ctrl+Q)
+  
 4. شورتکات ذخیره‌شده را تست کنید؛ با فشردن کلید تعریف‌شده، اسکریپت اجرا خواهد شد.
+   
 </div>
 
