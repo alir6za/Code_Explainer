@@ -42,7 +42,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## How to get an API key from [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+## How to get a free API key from [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
 
 To use this project, you need to obtain an API key from Studio AI.
 Steps to get the API key:
