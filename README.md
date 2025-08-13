@@ -1,105 +1,81 @@
-<div style="direction: rtl; text-align: right;">
+## Code Explainer — Automatic Code Explanation Tool with a Keyboard Shortcut on Linux
 
-## Code Explainer — ابزار توضیح خودکار کد با استفاده از کلید میانبر در لینوکس
-
-خیلی وقت‌ها پیش میاد که می‌خوای کد رو بررسی کنی و بفهمی دقیقاً چی کار می‌کنه، اما حوصله‌ی کپی‌پیست کردنش توی ابزار هوش مصنوعی رو نداری. با این ریپو، فقط با هایلایت کردن کد و زدن یک کلید ترکیبی می‌تونی همون‌جا پنل توضیحات کد رو جلوی چشمت بیاری.
-
-</div>
+Many times, you want to review some code and understand exactly what it does, but you don’t feel like copy-pasting it into an AI tool. With this repo, you can simply highlight the code and press a keyboard shortcut to instantly bring up the code explanation panel right in front of you.
 
 <div style="text-align: center;">
   <img src="./assets/img/sample.png" alt="panel" width="700"/>
-</div>
-
-<div style="direction: rtl; text-align: right;">
-این ابزار سبک برای لینوکس، متن کدی که انتخاب کرده‌اید را خوانده و با استفاده از LLM (مدل Gemini)، آن را به‌صورت خلاصه و به زبان فارسی توضیح می‌دهد. رابط کاربری آن با GTK3 طراحی شده و برای بستن پنجره کافی است کلید Space را فشار دهید.
-</div>
-
-<div style="direction: rtl; text-align: right;">
-
-## قابلیت‌ها
-- **توضیح فارسی و خلاصه**: جمع‌بندی ۳–۴ خطی از هدف و نکات مهم کد  
-- **پنل دو-بخشی**: نمایش همزمان «کد انتخاب‌شده» و «توضیح»  
-- **هایلایت سینتکس خودکار**
-- **میانبر بستن**: کلید Space  
-
-## پیش‌نیازها
-- **سیستم‌عامل**: لینوکس   
-- **Python**: نسخه 3.10 یا بالاتر  
-- **وابستگی‌های سیستمی**:
   
 </div>
 
-<div style="text-align: left; direction: ltr;">
+This lightweight Linux tool reads the code you’ve selected and uses an LLM (Gemini model) to generate a concise explanation in Persian. The UI is built with GTK3, and you can close the window by pressing Space.
 
-  - Debian/Ubuntu:  
+## Features
+- **Concise Persian explanation**: A 3–4 line summary of the code’s purpose and key points
+- **Two-pane panel**: Shows “Selected Code” and “Explanation” side by side
+- **Automatic syntax highlighting**
+- **Close shortcut**: Space key
+
+## Prerequisites
+- **Operating system**: Linux
+- **Python**: Version 3.10 or newer
+- **System dependencies**:
+  - Debian/Ubuntu:
     ```bash
     sudo apt update
     sudo apt install -y python3 python3-venv python3-pip python3-gi gir1.2-gtk-3.0 xclip libnotify-bin
-    ```  
-  - Fedora/RHEL:  
+    ```
+  - Fedora/RHEL:
     ```bash
     sudo dnf install -y python3 python3-pip python3-gi gtk3 xclip libnotify
-    ```  
-  - Arch:  
+    ```
+  - Arch:
     ```bash
     sudo pacman -S --needed python python-pip python-gobject gtk3 xclip libnotify
     ```
-</div>
 
-<div style="direction: rtl; text-align: right;">
-
-## نصب وابستگی‌های پایتونی
-در ریشه مخزن:  
+## Install Python dependencies
+From the repository root:
 ```bash
 cd Code_Explainer
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-</div>
 
-<div style="direction: rtl; text-align: right;">
+## How to get an API key from [Studio AI](https://aistudio.google.com/prompts/new_chat)
 
-## نحوه گرفتن API از [Studio AI](https://aistudio.google.com/prompts/new_chat)
-
-
-برای استفاده از این پروژه نیاز دارید کلید API از Studio AI بگیرید.  
-مراحل  دریافت API:
+To use this project, you need to obtain an API key from Studio AI.
+Steps to get the API key:
 
 <a href="https://youtu.be/MziqV5U4U1o?si=iSIGzSf0d6gxK9Wd">
-  <img src="./assets/img/youtube.png" alt="آموزش گرفتن API از Studio AI" width="150" />
+  <img src="./assets/img/youtube.png" alt="How to get an API from Studio AI" width="150" />
 </a>
 
- کلید را در فایل `api/gemini_api.py` در متغیر `GEMINI_API_KEY` جایگزین کنید.
+Place the key in `api/gemini_api.py` by replacing the `GEMINI_API_KEY` variable.
 
-</div>
+## Create a keyboard shortcut to run the module on Linux
 
-<div style="direction: rtl; text-align: right;">
+To quickly run `main.py` with a keyboard shortcut on Linux, follow these steps:
 
-## ساخت شورتکات اجرای ماژول در لینوکس
-
-برای اجرای سریع ماژول `main.py` با یک کلید میانبر در لینوکس مراحل زیر را دنبال کنید:
-
-1. ابتدا اطمینان حاصل کنید که اسکریپت قابلیت اجرا دارد:  
+1. Ensure the script is executable:
     ```bash
     chmod +x path/to/main.py
     ```
 
-2. برای ساخت شورتکات اجرای ماژول در محیط دسکتاپ (مثلاً GNOME) به مسیر زیر بروید:  
+2. To create a desktop environment shortcut (e.g., GNOME), go to:
 
     ```
     Settings → Keyboard → View and Customize Shortcuts → Customize Shortcuts
     ```
 
-3. سپس یک شورتکات جدید بسازید و مقادیر زیر را وارد کنید: 
-   - **Name:** نام دلخواه (مثلاً `Code Explainer`)  
-   - **Command:** مسیر اجرای ماژول `main.py`، برای مثال:  
-      ```bash
-      python3 /full/path/to/main.py
-      ```
-   - **Shortcut:** کلید ترکیبی دلخواه (مثلاً Ctrl+Q)
-  
-4. شورتکات ذخیره‌شده را تست کنید؛ با فشردن کلید تعریف‌شده، اسکریپت اجرا خواهد شد.
-   
-</div>
+3. Create a new custom shortcut and fill in the following:
+   - **Name:** Any name (e.g., `Code Explainer`)
+   - **Command:** The full path to run `main.py`, for example:
+     ```bash
+     python3 /full/path/to/main.py
+     ```
+   - **Shortcut:** Your preferred key combo (e.g., Ctrl+Q)
+
+4. Test the saved shortcut. When you press the defined key combo, the script should run.
+
 
